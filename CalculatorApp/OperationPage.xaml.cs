@@ -6,5 +6,15 @@ public partial class OperationsPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private async void OnConversorClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("ConversorPage"); 
+    }
+    private async void OnLogoutClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("../.."); 
+    }
+    
 }
 

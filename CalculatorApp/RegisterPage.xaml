@@ -9,8 +9,9 @@
         <VerticalStackLayout
             Padding="30" Spacing="15">
             <Entry x:Name="NewUsernameEntry" Placeholder="New Username" />
-            <Entry x:Name="NewPasswordEntry" Placeholder="New Password" IsPassword="True" />
-            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm Password" IsPassword="True" />
+            <Entry x:Name="NewUseremailEntry" Placeholder="New Useremail" />
+            <Entry x:Name="NewPasswordEntry" Placeholder="New Password"/>
+            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm Password"/>
 
             <Button Text="Submit" Clicked="OnSubmitClicked" />
             </VerticalStackLayout>
