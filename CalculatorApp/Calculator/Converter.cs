@@ -55,14 +55,6 @@ namespace oppguidedpw
         {
             this.operations[op-1].validate(input);
             
-            if (this.operations[op-1].NeedBitSize())
-            {
-                Console.Write("How many bits should I use: ");
-                int bits = Int32.Parse(Console.ReadLine());
-
-                return this.operations[op-1].Change(input, bits);
-            }
-
             return this.operations[op-1].Change(input);
         }
 

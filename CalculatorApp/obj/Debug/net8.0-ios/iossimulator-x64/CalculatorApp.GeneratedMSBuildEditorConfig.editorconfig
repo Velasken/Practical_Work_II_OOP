@@ -34,6 +34,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = CalculatorApp.ConversorPag
 build_metadata.AdditionalFiles.TargetPath = ConversorPage.xaml
 build_metadata.AdditionalFiles.RelativePath = ConversorPage.xaml
 
+[C:/Users/svc_admin/OneDrive - UFV/Velasco_Pasamontes_Miguel_PWII_OOP/Practical_Work_II_OOP/CalculatorApp/ForgotpasswordPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CalculatorApp.ForgotpasswordPage.xaml
+build_metadata.AdditionalFiles.TargetPath = ForgotpasswordPage.xaml
+build_metadata.AdditionalFiles.RelativePath = ForgotpasswordPage.xaml
+
 [C:/Users/svc_admin/OneDrive - UFV/Velasco_Pasamontes_Miguel_PWII_OOP/Practical_Work_II_OOP/CalculatorApp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CalculatorApp.MainPage.xaml
