@@ -5,7 +5,7 @@ namespace CalculatorApp;
 public partial class ConversorPage : ContentPage
 {
     Converter converter = new Converter();
-    //Operations operations = new Operations();
+    Operations ops = new Operations(";");
 	public ConversorPage()
     {
         InitializeComponent();
@@ -13,6 +13,8 @@ public partial class ConversorPage : ContentPage
 
     private async void OnOperationsClicked(object sender, EventArgs e)
     {
+        ops.SaveOperations("operations.csv");
+        
         await Shell.Current.GoToAsync("OperationsPage"); 
     }
     private async void OnLogoutClicked(object sender, EventArgs e)
@@ -93,187 +95,299 @@ public partial class ConversorPage : ContentPage
     }
     private async void OnDecimalToBinaryClicked(object sender, EventArgs e) 
     {
+        int operation = 1;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(1, NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnDecimalToTwoComplementClicked(object sender, EventArgs e) 
     {
+        int operation = 4;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(4,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnDecimalToOctalClicked(object sender, EventArgs e) 
     {
+        int operation = 2;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(2,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnDecimalToHexadecimalClicked(object sender, EventArgs e) 
     {
+        int operation = 3;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(3,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnBinaryToDecimalClicked(object sender, EventArgs e) 
     {
+        int operation = 5;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(5,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnTwoComplementToDecimalClicked(object sender, EventArgs e) 
     {
+        int operation = 6;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(6,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnOctalToDecimalClicked(object sender, EventArgs e) 
     {
+        int operation = 7;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(7,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
     private async void OnHexadecimalToDecimalClicked(object sender, EventArgs e) 
     {
+        int operation = 8;
+        string input = NumberLabel.Text;
+        string output = "";
+        int error = 0;
+        string errorMessage = "";
+
         try
         {
-            string res = converter.PerformConversion(8,NumberLabel.Text);
-            NumberLabel.Text = res;
+            output = converter.PerformConversion(operation, input);
+            NumberLabel.Text = output;
         }
         catch(OverflowException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
         catch (Exception ex)
         {
+            error = 1;
+            errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
             NumberLabel.Text = string.Empty;
         }
+
+        ops.AddOperations(input, output, operation, error, errorMessage);
     }
 
 }
