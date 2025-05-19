@@ -8,7 +8,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text ="Conversor" Clicked="OnConversorClicked"/>
         <ToolbarItem Text ="Logout" Clicked="OnLogoutClicked"/>
-        <ToolbarItem Text ="Exit"/>
+        <ToolbarItem Text ="Exit" Clicked="OnExitClicked"/>
     </ContentPage.ToolbarItems>
     
     <ScrollView>

@@ -7,6 +7,10 @@ public partial class OperationsPage : ContentPage
         InitializeComponent();
     }
 
+    private async void OnExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
     private async void OnConversorClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("ConversorPage"); 

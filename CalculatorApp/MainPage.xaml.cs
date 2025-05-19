@@ -24,5 +24,10 @@ public partial class MainPage : ContentPage
     {
         await Shell.Current.GoToAsync("RegisterPage");
     }
+
+    private async void OnExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
 }
 

@@ -6,6 +6,11 @@ public partial class ForgotpasswordPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private async void OnExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
     
 }
 

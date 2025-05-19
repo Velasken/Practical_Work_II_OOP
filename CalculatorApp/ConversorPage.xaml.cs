@@ -11,6 +11,10 @@ public partial class ConversorPage : ContentPage
         InitializeComponent();
     }
 
+    private async void OnExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
     private async void OnOperationsClicked(object sender, EventArgs e)
     {
         ops.SaveOperations("operations.csv");

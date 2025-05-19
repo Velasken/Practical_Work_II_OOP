@@ -7,6 +7,10 @@ public partial class RegisterPage : ContentPage
         InitializeComponent();
     }
 
+    private async void OnExitClicked(object sender, EventArgs e)
+    {
+        Application.Current.Quit();
+    }
     private async void OnSubmitClicked(object sender, EventArgs e)
     {
         if (NewPasswordEntry.Text != ConfirmPasswordEntry.Text)
