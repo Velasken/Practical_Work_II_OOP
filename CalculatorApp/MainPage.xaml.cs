@@ -2,24 +2,38 @@
 
 public partial class MainPage : ContentPage
 {
+    public static List<User> Users = new List<User>();
+
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	private async void OnLoginClicked(object sender, EventArgs e)
+	public static bool UserExists(string username, string password)
     {
-        /*if (UsernameEntry.Text == "admin" && PasswordEntry.Text == "1234")
+        foreach (User user in Users)
         {
-            await DisplayAlert("Success", "Logged in!", "OK");
+            if (user.username == username && user.password == password)
+                return true;
+        }
+        return false;
+    }
+
+    private async void OnLoginClicked(object sender, EventArgs e)
+    {
+        if (UserExists(UsernameEntry.Text, PasswordEntry.Text))
+        {
+            await DisplayAlert("Success", $"Welcome {UsernameEntry.Text}!", "OK");
+            await Shell.Current.GoToAsync("ConversorPage");
+            UsernameEntry.Text = string.Empty;
+            PasswordEntry.Text = string.Empty;
         }
         else
         {
             await DisplayAlert("Error", "Invalid credentials", "Try Again");
-        }*/
-        await Shell.Current.GoToAsync("ConversorPage");
+        }
     }
-
+    
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("RegisterPage");

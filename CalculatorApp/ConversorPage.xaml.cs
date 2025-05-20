@@ -17,7 +17,7 @@ public partial class ConversorPage : ContentPage
     }
     private async void OnOperationsClicked(object sender, EventArgs e)
     {
-        ops.SaveOperations("operations.csv");
+        ops.SaveOperations("Practical_Work_II_OOP/Files/operations.csv");
         
         await Shell.Current.GoToAsync("OperationsPage"); 
     }
