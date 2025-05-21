@@ -1,3 +1,6 @@
+using System.IO;
+
+
 namespace CalculatorApp;
 
 public partial class RegisterPage : ContentPage
