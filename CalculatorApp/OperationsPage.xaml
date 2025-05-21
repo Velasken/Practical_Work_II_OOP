@@ -12,6 +12,11 @@
     </ContentPage.ToolbarItems>
     
     <ScrollView>
-        <VerticalStackLayout />
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label x:Name="UsernameLabel" FontSize="20" />
+            <Label x:Name="EmailLabel" FontSize="20" />
+            <Label x:Name="PasswordLabel" FontSize="20" />
+            <Label x:Name="OperationsCountLabel" FontSize="20" />
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

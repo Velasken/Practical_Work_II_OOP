@@ -12,7 +12,7 @@ public partial class RegisterPage : ContentPage
         Application.Current.Quit();
     }
 
-    public bool UserAlreadyExists(string username, string email, string password)
+    private bool UserAlreadyExists(string username, string email, string password)
     {
         foreach (User user in MainPage.Users)
         {
@@ -26,7 +26,6 @@ public partial class RegisterPage : ContentPage
 
     private bool IsValidPassword(string password)
     {
-        int passwordLength = password.Length;
         if (password.Length < 8)
             return false;
 

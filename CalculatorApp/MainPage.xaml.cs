@@ -3,13 +3,14 @@
 public partial class MainPage : ContentPage
 {
     public static List<User> Users = new List<User>();
+    public static User LoggedUser;
 
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	public static bool UserExists(string username, string password)
+	private static bool UserExists(string username, string password)
     {
         foreach (User user in Users)
         {
@@ -19,10 +20,22 @@ public partial class MainPage : ContentPage
         return false;
     }
 
+    private static User GetUser(string username, string password)
+    {
+        foreach (User user in Users)
+        {
+            if (user.username == username && user.password == password)
+                return user;
+        }
+        return null;
+    }
+
     private async void OnLoginClicked(object sender, EventArgs e)
     {
         if (UserExists(UsernameEntry.Text, PasswordEntry.Text))
         {
+            User user = GetUser(UsernameEntry.Text, PasswordEntry.Text);
+            LoggedUser = user;
             await DisplayAlert("Success", $"Welcome {UsernameEntry.Text}!", "OK");
             await Shell.Current.GoToAsync("ConversorPage");
             UsernameEntry.Text = string.Empty;

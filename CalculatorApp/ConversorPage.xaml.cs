@@ -6,6 +6,7 @@ public partial class ConversorPage : ContentPage
 {
     Converter converter = new Converter();
     Operations ops = new Operations(";");
+    public static int OperationsCount { get; set; } = 0;
 	public ConversorPage()
     {
         InitializeComponent();
@@ -133,6 +134,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnDecimalToTwoComplementClicked(object sender, EventArgs e) 
     {
@@ -170,6 +172,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnDecimalToOctalClicked(object sender, EventArgs e) 
     {
@@ -207,6 +210,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnDecimalToHexadecimalClicked(object sender, EventArgs e) 
     {
@@ -244,6 +248,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnBinaryToDecimalClicked(object sender, EventArgs e) 
     {
@@ -281,6 +286,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnTwoComplementToDecimalClicked(object sender, EventArgs e) 
     {
@@ -318,6 +324,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnOctalToDecimalClicked(object sender, EventArgs e) 
     {
@@ -355,6 +362,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
     private async void OnHexadecimalToDecimalClicked(object sender, EventArgs e) 
     {
@@ -392,6 +400,7 @@ public partial class ConversorPage : ContentPage
         }
 
         ops.AddOperations(input, output, operation, error, errorMessage);
+        OperationsCount++;
     }
 
 }
