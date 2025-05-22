@@ -140,6 +140,13 @@ public partial class MainPage : ContentPage
         PasswordEntry.Text = string.Empty;
     }
 
+    private async void OnForgotPasswordTapped(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("ForgotpasswordPage");
+        UsernameEntry.Text = string.Empty;
+        PasswordEntry.Text = string.Empty;
+    }
+
     private async void OnExitClicked(object sender, EventArgs e)
     {
         SaveUserData();

@@ -38,8 +38,11 @@
 
             <!-- Forgot Password -->
             <Label Text="Forgot Password?"
-                   TextColor="Blue"
-                   HorizontalOptions="End">
+            TextColor="Blue"
+            HorizontalOptions="End">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+            </Label.GestureRecognizers>
             </Label>
 
             <!-- Buttons -->
