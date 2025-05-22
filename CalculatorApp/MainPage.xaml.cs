@@ -66,7 +66,6 @@ public partial class MainPage : ContentPage
                 if (Users[i].username == LoggedUser.username && Users[i].email == LoggedUser.email)
                 {
                     Users[i].operationsCount = LoggedUser.operationsCount;
-                    break;
                 }
             }
 

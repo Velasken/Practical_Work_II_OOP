@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage 
-     x:Class="CalculatorApp.RegisterPage"
+    x:Class="CalculatorApp.RegisterPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Register Page">
+    Title="Register Page"
+    BackgroundColor="#D3D3D3">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text ="Exit" Clicked="OnExitClicked"/>
+        <ToolbarItem Text="Exit" Clicked="OnExitClicked"/>
+        <ToolbarItem Text="Back" Clicked="OnBackClicked"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30" Spacing="15">
-            <Entry x:Name="NewUsernameEntry" Placeholder="New Username" />
-            <Entry x:Name="NewUseremailEntry" Placeholder="New Useremail" />
-            <Entry x:Name="NewPasswordEntry" Placeholder="New Password"/>
-            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm Password"/>
+        <VerticalStackLayout Padding="30" Spacing="20">
 
-            <Button Text="Submit" Clicked="OnSubmitClicked" />
-            </VerticalStackLayout>
+            <!-- Header -->
+            <Grid HeightRequest="80" BackgroundColor="#3B556D">
+                <Label Text="OOP Conversor"
+                       FontSize="28"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Grid>
+
+            <!-- Inputs -->
+            <Entry x:Name="NewUsernameEntry" Placeholder="New Username" BackgroundColor="White" TextColor ="Black"/>
+            <Entry x:Name="NewUseremailEntry" Placeholder="New Useremail" BackgroundColor="White" TextColor ="Black"/>
+            <Entry x:Name="NewPasswordEntry" Placeholder="New Password" BackgroundColor="White" TextColor ="Black"/>
+            <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm Password" BackgroundColor="White" TextColor ="Black"/>
+
+            <!-- Submit -->
+            <Button Text="Submit" Clicked="OnSubmitClicked" BackgroundColor="#3B556D" TextColor="White"/>
+        </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

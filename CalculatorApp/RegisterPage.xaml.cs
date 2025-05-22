@@ -15,6 +15,11 @@ public partial class RegisterPage : ContentPage
         Application.Current.Quit();
     }
 
+    private async void OnBackClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync(".."); 
+    }
+
     private bool UserAlreadyExists(string username, string email, string password)
     {
         foreach (User user in MainPage.Users)
