@@ -4,7 +4,10 @@ namespace CalculatorApp;
 
 public partial class ConversorPage : ContentPage
 {
+    // Instance of the Converter class used for performing conversions
     Converter converter = new Converter();
+
+    // Instance of the Operations class to manage the operations
     Operations ops = new Operations(";");
 	public ConversorPage()
     {
@@ -16,8 +19,11 @@ public partial class ConversorPage : ContentPage
         MainPage.SaveUserData();
         Application.Current.Quit();
     }
+
+    // Navigates to the operations page
     private async void OnOperationsClicked(object sender, EventArgs e)
     {
+        //Saves the done operations in a file
         ops.SaveOperations("Practical_Work_II_OOP/Files/operations.csv");
         
         await Shell.Current.GoToAsync("OperationsPage"); 
@@ -27,6 +33,8 @@ public partial class ConversorPage : ContentPage
         MainPage.SaveUserData();
         await Shell.Current.GoToAsync(".."); 
     }
+
+    // Input number buttons
     private void On7Clicked(object sender, EventArgs e)
     {
         NumberLabel.Text +=7;
@@ -67,14 +75,20 @@ public partial class ConversorPage : ContentPage
     {
         NumberLabel.Text +=0;
     }
+
+    // Clear the NumberLabel text
     private void OnACClicked(object sender, EventArgs e) 
     {
         NumberLabel.Text = string.Empty;
     }
+
+    // Minus simbol for two complement operations
     private void OnMinusClicked(object sender, EventArgs e) 
     {
         NumberLabel.Text +="-";
     }
+
+    // Hexadecimal inputs
     private void OnAClicked(object sender, EventArgs e) 
     {
         NumberLabel.Text +="A";
@@ -99,9 +113,14 @@ public partial class ConversorPage : ContentPage
     {
         NumberLabel.Text +="F";
     }
+
+    //Operations selection bottons
     private async void OnDecimalToBinaryClicked(object sender, EventArgs e) 
     {
+        //Operation to be done in converter.cs
         int operation = 1;
+
+        // Input number to convert
         string input = NumberLabel.Text;
         string output = "";
         int error = 0;
@@ -109,14 +128,21 @@ public partial class ConversorPage : ContentPage
 
         try
         {
+            // Perform the conversion
             output = converter.PerformConversion(operation, input);
+
+            // Display the result in the label
             NumberLabel.Text = output;
         }
+
+        //Error handling
         catch(OverflowException ex)
         {
             error = 1;
             errorMessage = ex.Message;
             await DisplayAlert("Error", ex.Message, "OK");
+
+            // Clean the label when there has been an error 
             NumberLabel.Text = string.Empty;
         }
         catch(FormatException ex)
@@ -134,7 +160,10 @@ public partial class ConversorPage : ContentPage
             NumberLabel.Text = string.Empty;
         }
 
+        // Add the done operation to the operation file
         ops.AddOperations(input, output, operation, error, errorMessage);
+
+        // Increment the user's operations count
         MainPage.LoggedUser.operationsCount++;
     }
     private async void OnDecimalToTwoComplementClicked(object sender, EventArgs e) 
