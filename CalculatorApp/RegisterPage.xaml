@@ -28,6 +28,12 @@
             <Entry x:Name="NewUseremailEntry" Placeholder="New Useremail" BackgroundColor="White" TextColor ="Black"/>
             <Entry x:Name="NewPasswordEntry" Placeholder="New Password" BackgroundColor="White" TextColor ="Black"/>
             <Entry x:Name="ConfirmPasswordEntry" Placeholder="Confirm Password" BackgroundColor="White" TextColor ="Black"/>
+            
+            <!-- Protection Policy Agreement -->
+            <HorizontalStackLayout>
+                <CheckBox x:Name="PolicyAgreementCheckBox" VerticalOptions="Center"/>
+                <Label Text="I agree to the Protection Policy" FontSize="14" TextColor="Black" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
 
             <!-- Submit -->
             <Button Text="Submit" Clicked="OnSubmitClicked" BackgroundColor="#3B556D" TextColor="White"/>

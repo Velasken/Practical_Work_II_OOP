@@ -95,6 +95,11 @@ public partial class RegisterPage : ContentPage
         {
             await DisplayAlert("Error", "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.", "OK");
         }
+        // Check if the user has accepted the privacy policy
+        else if (PolicyAgreementCheckBox.IsChecked == false)
+        {
+            await DisplayAlert("Error", "You must agree to the Protection Policy to register", "OK");
+        }
         else
         {
             // Creates a new User object with provided credentials
