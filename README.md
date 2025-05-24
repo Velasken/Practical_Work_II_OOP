@@ -22,7 +22,7 @@
 The conversion buttons are tied to specific operations. When one of these buttons is pressed, the app takes the current input in the text label and attempts to convert it based on the chosen operation. If the input is valid, the result is displayed in the text label, the operation is logged into a CSV file, and the operation counter for the current user is increased by one. If the input is invalid for the selected operation, a pop-up message appears explaining the error. The text label is then cleared, and even in this case, the operation is saved and the user's operation count is still incremented.
 There is an “Operations” button that takes the user to the operations page, saving the current operations file before transitioning. The “Logout” button returns the user to the login page, saving all of their data, including the number of operations performed. Finally, the “Exit” button performs the same data-saving steps as the logout button, but it also closes the application.
 - **Operations Page**: This page is used to display all the user's information, including their username, email, password, and operation count. It contains three buttons. The "Converter" button takes the user to the converter page. The "Logout" button returns the user to the login page and saves all of their data. The "Exit" button performs the same function as the logout button, but it also closes the application.
-
+![UML Diagram](./Files/UML_PWII.png)
 ---
 
 ## Problems
