@@ -16,6 +16,7 @@ public partial class ConversorPage : ContentPage
 
     private async void OnExitClicked(object sender, EventArgs e)
     {
+        ops.SaveOperations("Practical_Work_II_OOP/Files/operations.csv");
         MainPage.SaveUserData();
         Application.Current.Quit();
     }
@@ -30,6 +31,7 @@ public partial class ConversorPage : ContentPage
     }
     private async void OnLogoutClicked(object sender, EventArgs e)
     {
+        ops.SaveOperations("Practical_Work_II_OOP/Files/operations.csv");
         MainPage.SaveUserData();
         await Shell.Current.GoToAsync(".."); 
     }
